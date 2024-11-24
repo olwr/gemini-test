@@ -1,0 +1,233 @@
+@import "reset.css";
+@import "vars.css";
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family), serif;
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.hide-welcome .header,
+.hide-welcome .suggestion-list {
+    display: none;
+}
+
+.header {
+    margin: 7.2rem 0 0 3.2rem;
+    padding: 1.6rem;
+}
+
+.header .title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    width: fit-content;
+    background-clip: text;
+    background: rgb(77,73,124);
+    background: linear-gradient(90deg, rgba(77,73,124,1) 16%, rgba(106,102,157,1) 37%, rgba(154,191,128,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header .subtitle {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--subheading-color);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 2rem;
+    width: 100%;
+}
+
+.suggestion-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.suggestion-list .suggestion {
+    font-weight: 500;
+    padding: 1.6rem;
+    border-radius: 8px;
+    width: 26rem;
+    height: 26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--secondary-color);
+    box-shadow: var(--deep);
+}
+
+.suggestion .text {
+    margin-top: 5.4rem;
+}
+
+.suggestion .icon {
+    align-self: flex-end;
+    background: rgba(10,17,31,0.6);
+    color: var(--placeholder-color);
+    padding: .8rem;
+    border-radius: 50%;
+}
+
+.typing-form {
+    margin: 0 1.6rem 4rem 1.6rem;
+}
+
+.input-area {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-area .icon {
+    align-self: center;
+    font-size: 3.2rem;
+}
+
+.typing-input {
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 16px;
+    padding: 1.6rem;
+    width: 100%;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    box-shadow: var(--focus);
+}
+
+.typing-input::placeholder {
+    color: var(--placeholder-color);
+}
+
+button {
+    padding: 0.4rem;
+    width: 4rem;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.chat {
+    margin: 4rem 0 0 2.4rem;
+    padding: 2rem 1rem 8rem;
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-color: #999 transparent;
+}
+
+.chat .message {
+    margin: 1.6rem 0;
+}
+
+.chat .message .icon {
+    height: 2.4rem;
+    width: 2.4rem;
+    font-size: 1.4rem;
+    background: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin-left: 3.5rem;
+    visibility: hidden;
+}
+
+.chat .message.incoming:not(.loading):hover .icon {
+    visibility: visible;
+}
+
+.chat .message .message-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.chat .message .avatar{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-self: flex-start;
+}
+
+.chat .message .text {
+    text-wrap: wrap;
+}
+
+.chat .message.loading .text {
+    display: none;
+}
+
+.chat .loading-indicator {
+    display: none;
+    flex-direction: column;
+    gap: .8rem;
+    width: 100%;
+}
+
+.chat .message.loading .loading-indicator {
+    display: flex;
+}
+
+.chat .loading-indicator .loading-bar {
+    height: 12px;
+    width: 85%;
+    background: rgb(106,102,157);
+    background: linear-gradient(90deg, rgb(154,191,128), rgb(73, 69, 119), rgb(154,191,128));
+    animation: animate 3s linear infinite;
+}
+
+.chat .loading-indicator .loading-bar:last-child {
+    width: 65%;
+}
+
+@keyframes animate {
+    0% {
+        background-position: -800px 0;
+    }
+
+    100% {
+        background-position: 800px 0;
+    }
+}
+
+@media screen and (width >= 1200px) {
+    .suggestion-list {
+        gap: 10rem;
+    }
+
+    .input-area {
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .typing-input {
+        width: 70%;
+        padding: 1.2rem;
+    }
+
+    .chat .message .message-content {
+        width: 95%;
+    }
+
+    .chat .loading-indicator .loading-bar {
+        width: 95%;
+        animation-duration: 2s;
+    }
+
+    .chat .loading-indicator .loading-bar:last-child {
+        width: 75%;
+    }
+}

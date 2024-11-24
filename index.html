@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!-- informa ao navegador a versão de html do doc (neste caso, o 5) -->
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gemini Chat</title>
+
+    <!-- linka com o Google Fonts para usar ícones   -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"/>
+
+    <link rel="stylesheet" href="src/index.css"/> <!-- linka a folha de estilos -->
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<header class="header">
+    <h2 class="title">Bem-vindo!</h2>
+    <h4 class="subtitle">Como posso te ajudar hoje?</h4>
+</header>
+
+<main class="main">
+
+    <ul class="suggestion-list">
+        <li class="suggestion">
+            <h4 class="text">Me ajude a organizar minha rotina</h4>
+            <span class="icon material-symbols-rounded">
+                event_upcoming
+            </span>
+        </li>
+        <li class="suggestion">
+            <h4 class="text">Quais são as linguagens mais usadas para desenvolvimento web?</h4>
+            <span class="icon material-symbols-rounded">
+                code
+            </span>
+        </li>
+        <li class="suggestion">
+            <h4 class="text">Me conte uma piada</h4>
+            <span class="icon material-symbols-rounded">
+                comedy_mask
+            </span>
+        </li>
+    </ul>
+
+    <div class="chat"></div>
+
+    <form action="#" class="typing-form">
+        <div class="input-area">
+            <input type="text" class="typing-input" placeholder="Digite o seu prompt aqui..." required/>
+            <button class="icon material-symbols-rounded" type="submit">
+                send
+            </button>
+        </div>
+        <!--        <div class="action-buttons">-->
+        <!--            <button class="icon material-symbols-rounded">delete</button>-->
+        <!--        </div>-->
+    </form>
+</main>
+
+<!--<footer class="footer">-->
+<!--    <p>hello</p>-->
+<!--</footer>-->
+</body>
+</html>
