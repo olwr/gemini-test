@@ -2,7 +2,7 @@
 const typingForm = document.querySelector(".typing-form");
 const chatElement = document.querySelector(".chat");
 let userMessage;
-const API_KEY = 'AIzaSyDCcMwZHKLXetQYYzeFhLjOYnmE836-ekc';
+const API_KEY = 'AIzaSyCpUhc-_oqX7ndwcU3tb21cwor2n0Y4eOE';
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent?key=${API_KEY}`;
 
 const createMessageEl = (content, ...classes) => {
