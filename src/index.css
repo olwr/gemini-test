@@ -79,6 +79,7 @@ body {
     background: rgba(10,17,31,0.6);
     color: var(--placeholder-color);
     padding: .8rem;
+    border: 3px #fff solid;
     border-radius: 50%;
 }
 
